@@ -22,7 +22,17 @@ const answers = [
 ];
 
 function getAnswer() {
-  const randomIndex = Math.floor(Math.random() * answers.length);
+  const ball = document.getElementById("eightBall");
   const answerBox = document.getElementById("answer");
-  answerBox.textContent = answers[randomIndex];
+  answerBox.textContent = "";
+  
+  // Анимация тряски
+  ball.classList.add("shake");
+  
+  // Ответ появляется после задержки
+  setTimeout(() => {
+    const randomIndex = Math.floor(Math.random() * answers.length);
+    answerBox.textContent = answers[randomIndex];
+    ball.classList.remove("shake");
+  }, 600);
 }
