@@ -49,5 +49,5 @@ function getAnswer() {
     answerBox.textContent = answers[randomIndex];
     answerBox.style.opacity = 1;
     ball.classList.remove("shake");
-  }, 1500);
+  }, 900);
 }
