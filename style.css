@@ -1,0 +1,38 @@
+body {
+  background-color: #111;
+  color: #0f0;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
+  border: 2px dashed #0f0;
+}
+
+button {
+  background-color: #222;
+  color: #0f0;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 2px solid #0f0;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0f0;
+  color: #111;
+}
+
+#answer {
+  margin-top: 30px;
+  font-size: 22px;
+  white-space: pre-wrap;
+}
