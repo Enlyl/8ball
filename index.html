@@ -2,15 +2,23 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Вьетнамский Шар-8</title>
+  <title>⚔️ Вьетнамский Magic 8-Ball</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="background"></div>
   <div class="container">
-    <h1>⚔️ Вьетнамский Magic 8-Ball</h1>
+    <h1>⚔️ Вьетнамский Шар Судьбы</h1>
+    
+    <div class="ball-container">
+      <img src="8ball.png" alt="Magic 8-Ball" class="eight-ball">
+      <div id="answer" class="answer-text"></div>
+    </div>
+
     <button onclick="getAnswer()">Спросить Судьбу</button>
-    <div id="answer"></div>
   </div>
+  
   <script src="script.js"></script>
 </body>
 </html>
