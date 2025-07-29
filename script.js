@@ -21,18 +21,28 @@ const answers = [
   "Ты уже сделал свой выбор — просто не осознал, как глубоко ты в дерьме."
 ];
 
+const helicopterSound = new Audio("helicopter.m4a");
+
 function getAnswer() {
   const ball = document.getElementById("eightBall");
   const answerBox = document.getElementById("answer");
+
+  // Сброс текста и прозрачность
   answerBox.textContent = "";
-  
-  // Анимация тряски
+  answerBox.style.opacity = 0;
+
+  // Запуск звука
+  helicopterSound.currentTime = 0;
+  helicopterSound.play();
+
+  // Трясём шар
   ball.classList.add("shake");
-  
-  // Ответ появляется после задержки
+
+  // Показываем ответ с задержкой
   setTimeout(() => {
     const randomIndex = Math.floor(Math.random() * answers.length);
     answerBox.textContent = answers[randomIndex];
+    answerBox.style.opacity = 1;
     ball.classList.remove("shake");
-  }, 600);
+  }, 1500);
 }
