@@ -22,23 +22,28 @@ const answers = [
 ];
 
 const helicopterSound = new Audio("helicopter.m4a");
+let soundEnabled = true;
+
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  const toggleBtn = document.getElementById("toggle-sound");
+  toggleBtn.textContent = soundEnabled ? "🔊" : "🔇";
+}
 
 function getAnswer() {
   const ball = document.getElementById("eightBall");
   const answerBox = document.getElementById("answer");
 
-  // Сброс текста и прозрачность
   answerBox.textContent = "";
   answerBox.style.opacity = 0;
 
-  // Запуск звука
-  helicopterSound.currentTime = 0;
-  helicopterSound.play();
+  if (soundEnabled) {
+    helicopterSound.currentTime = 0;
+    helicopterSound.play();
+  }
 
-  // Трясём шар
   ball.classList.add("shake");
 
-  // Показываем ответ с задержкой
   setTimeout(() => {
     const randomIndex = Math.floor(Math.random() * answers.length);
     answerBox.textContent = answers[randomIndex];
